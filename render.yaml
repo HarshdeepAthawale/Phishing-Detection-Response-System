@@ -12,3 +12,5 @@ services:
         value: https://phishing-detection-response-system.vercel.app
       - key: PORT
         value: 10000
+    healthCheckPath: /api/health
+    region: oregon

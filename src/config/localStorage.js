@@ -1,8 +1,10 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-// Local storage directory
-const STORAGE_DIR = path.join(__dirname, '../../data');
+// Local storage directory - use /tmp for deployment environments
+const STORAGE_DIR = process.env.NODE_ENV === 'production' 
+  ? '/tmp/data' 
+  : path.join(__dirname, '../../data');
 const ANALYSES_FILE = path.join(STORAGE_DIR, 'analyses.json');
 
 // Initialize local storage

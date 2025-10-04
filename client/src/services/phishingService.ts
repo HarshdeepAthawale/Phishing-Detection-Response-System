@@ -3,7 +3,7 @@ import { AnalysisResult } from '../types';
 
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
   ? process.env.REACT_APP_API_URL || 'https://phishing-detection-api.onrender.com/api'
-  : 'http://localhost:5000/api';
+  : 'http://localhost:10000/api';
 
 export const analyzeUrl = async (url: string): Promise<AnalysisResult> => {
   try {

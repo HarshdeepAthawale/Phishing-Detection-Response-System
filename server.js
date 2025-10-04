@@ -13,7 +13,7 @@ dotenv.config();
 initStorage();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 
 // Security middleware
 app.use(helmet({
@@ -22,21 +22,29 @@ app.use(helmet({
 }));
 
 // CORS configuration
+const allowedOrigins = process.env.NODE_ENV === 'production' 
+  ? [
+      process.env.FRONTEND_URL,
+      'https://phishing-detection-response-system.vercel.app',
+      'https://phishing-detection-response-system-git-main-harshdeep-athawales-projects.vercel.app',
+      /^https:\/\/.*\.vercel\.app$/,  // Allow all Vercel domains
+      /^https:\/\/.*\.onrender\.com$/ // Allow Render domains for testing
+    ]
+  : ['http://localhost:3000', 'http://localhost:3001'];
+
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? [process.env.FRONTEND_URL] 
-    : ['http://localhost:3000', 'http://localhost:3001'],
+  origin: allowedOrigins,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept']
 }));
 
 app.use(express.json({ limit: '10mb' }));
 
-// Rate limiting
+// Rate limiting (more lenient for testing)
 const rateLimiter = new RateLimiterMemory({
   keyPrefix: 'middleware',
-  points: 10, // Number of requests
+  points: 50, // Number of requests (increased for testing)
   duration: 60, // Per 60 seconds
 });
 
@@ -55,9 +63,22 @@ const rateLimiterMiddleware = (req, res, next) => {
 
 app.use('/api', rateLimiterMiddleware);
 
+// Add request logging middleware
+app.use('/api', (req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.path} from ${req.ip}`);
+  console.log('Origin:', req.get('Origin'));
+  next();
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Phishing Detection API is running' });
+  console.log('Health check requested');
+  res.json({ 
+    status: 'OK', 
+    message: 'Phishing Detection API is running',
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV
+  });
 });
 
 // Main phishing detection endpoint
