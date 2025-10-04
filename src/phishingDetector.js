@@ -1,0 +1,396 @@
+const axios = require('axios');
+const cheerio = require('cheerio');
+const Url = require('url-parse');
+const whois = require('whois');
+
+class PhishingDetector {
+  constructor() {
+    this.suspiciousKeywords = [
+      'login', 'signin', 'account', 'verify', 'update', 'secure',
+      'confirm', 'validate', 'authenticate', 'bank', 'paypal',
+      'amazon', 'apple', 'microsoft', 'google', 'facebook'
+    ];
+    
+    this.trustedDomains = [
+      'google.com', 'amazon.com', 'paypal.com', 'apple.com',
+      'microsoft.com', 'facebook.com', 'twitter.com', 'linkedin.com',
+      'github.com', 'stackoverflow.com', 'netflix.com', 'spotify.com'
+    ];
+  }
+
+  async analyzeUrl(url) {
+    const analysis = {
+      url: url,
+      isPhishing: false,
+      riskScore: 0,
+      riskLevel: 'LOW',
+      details: {},
+      recommendations: []
+    };
+
+    try {
+      // Parse URL
+      const parsedUrl = new Url(url);
+      analysis.details.parsedUrl = {
+        hostname: parsedUrl.hostname,
+        protocol: parsedUrl.protocol,
+        pathname: parsedUrl.pathname
+      };
+
+      // Check 1: URL structure analysis
+      const urlAnalysis = this.analyzeUrlStructure(url);
+      analysis.riskScore += urlAnalysis.score;
+      analysis.details.urlAnalysis = urlAnalysis;
+
+      // Check 2: Domain analysis
+      const domainAnalysis = await this.analyzeDomain(parsedUrl.hostname);
+      analysis.riskScore += domainAnalysis.score;
+      analysis.details.domainAnalysis = domainAnalysis;
+
+      // Check 3: Content analysis (if accessible)
+      try {
+        const contentAnalysis = await this.analyzeContent(url);
+        analysis.riskScore += contentAnalysis.score;
+        analysis.details.contentAnalysis = contentAnalysis;
+      } catch (error) {
+        analysis.details.contentAnalysis = {
+          accessible: false,
+          error: error.message,
+          score: 5 // Penalty for inaccessible content
+        };
+        analysis.riskScore += 5;
+      }
+
+      // Check 4: SSL certificate check
+      const sslAnalysis = await this.checkSSL(url);
+      analysis.riskScore += sslAnalysis.score;
+      analysis.details.sslAnalysis = sslAnalysis;
+
+      // Determine final risk level and phishing status
+      analysis.riskLevel = this.determineRiskLevel(analysis.riskScore);
+      analysis.isPhishing = analysis.riskScore >= 50;
+
+      // Generate recommendations
+      analysis.recommendations = this.generateRecommendations(analysis);
+
+      return analysis;
+
+    } catch (error) {
+      console.error('Analysis error:', error);
+      analysis.details.error = error.message;
+      analysis.riskScore = 100; // High risk if analysis fails
+      analysis.riskLevel = 'HIGH';
+      analysis.isPhishing = true;
+      analysis.recommendations.push('Unable to analyze URL - treat with extreme caution');
+      return analysis;
+    }
+  }
+
+  analyzeUrlStructure(url) {
+    const analysis = {
+      score: 0,
+      issues: [],
+      details: {}
+    };
+
+    // Check for suspicious patterns
+    if (url.includes('http://') && !url.includes('localhost')) {
+      analysis.score += 15;
+      analysis.issues.push('Uses HTTP instead of HTTPS');
+    }
+
+    // Check for IP address instead of domain
+    const ipRegex = /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/;
+    try {
+      const hostname = new URL(url).hostname;
+      if (ipRegex.test(hostname)) {
+        analysis.score += 20;
+        analysis.issues.push('Uses IP address instead of domain name');
+      }
+    } catch (e) {}
+
+    // Check for suspicious subdomains
+    if (url.includes('login-') || url.includes('secure-') || url.includes('verify-')) {
+      analysis.score += 10;
+      analysis.issues.push('Suspicious subdomain pattern');
+    }
+
+    // Check URL length
+    if (url.length > 100) {
+      analysis.score += 5;
+      analysis.issues.push('Unusually long URL');
+    }
+
+    // Check for suspicious characters
+    if (url.includes('@') || url.includes('\\')) {
+      analysis.score += 15;
+      analysis.issues.push('Contains suspicious characters');
+    }
+
+    analysis.details = {
+      length: url.length,
+      hasHTTPS: url.startsWith('https://'),
+      hasIP: ipRegex.test(url)
+    };
+
+    return analysis;
+  }
+
+  async analyzeDomain(hostname) {
+    const analysis = {
+      score: 0,
+      issues: [],
+      details: {}
+    };
+
+    if (!hostname) {
+      analysis.score += 25;
+      analysis.issues.push('No valid hostname');
+      return analysis;
+    }
+
+    // Check if domain is in trusted list
+    const isTrusted = this.trustedDomains.some(domain => 
+      hostname === domain || hostname.endsWith('.' + domain)
+    );
+
+    if (!isTrusted) {
+      analysis.score += 5;
+      analysis.issues.push('Domain not in trusted list');
+    }
+
+    // Check for typosquatting patterns
+    const typosquattingScore = this.detectTyposquatting(hostname);
+    analysis.score += typosquattingScore.score;
+    if (typosquattingScore.issues.length > 0) {
+      analysis.issues.push(...typosquattingScore.issues);
+    }
+
+    // Check domain age (simplified)
+    try {
+      const whoisData = await this.getDomainAge(hostname);
+      analysis.details.whois = whoisData;
+      
+      if (whoisData.isNew && whoisData.ageInDays < 30) {
+        analysis.score += 10;
+        analysis.issues.push('Domain is very new (less than 30 days)');
+      }
+    } catch (error) {
+      analysis.details.whoisError = error.message;
+    }
+
+    analysis.details.isTrusted = isTrusted;
+    return analysis;
+  }
+
+  detectTyposquatting(hostname) {
+    const analysis = {
+      score: 0,
+      issues: []
+    };
+
+    // Common typosquatting patterns
+    const suspiciousPatterns = [
+      /microsoft/g, /googIe/g, /faceb00k/g, /amaz0n/g,
+      /paypaI/g, /appIe/g, /tw1tter/g, /netfIix/g
+    ];
+
+    suspiciousPatterns.forEach(pattern => {
+      if (pattern.test(hostname)) {
+        analysis.score += 15;
+        analysis.issues.push('Possible typosquatting detected');
+      }
+    });
+
+    // Check for character substitution (only flag if it looks like typosquatting)
+    const suspiciousSubstitutions = [
+      /g00gle/i, /googIe/i, /faceb00k/i, /amaz0n/i,
+      /paypaI/i, /appIe/i, /tw1tter/i, /netfIix/i,
+      /m1crosoft/i, /y0utube/i
+    ];
+    
+    const hasSuspiciousSubstitutions = suspiciousSubstitutions.some(pattern => 
+      pattern.test(hostname)
+    );
+    
+    if (hasSuspiciousSubstitutions) {
+      analysis.score += 15;
+      analysis.issues.push('Contains suspicious character substitutions (possible typosquatting)');
+    }
+
+    return analysis;
+  }
+
+  async getDomainAge(hostname) {
+    return new Promise((resolve) => {
+      whois.lookup(hostname, (err, data) => {
+        if (err) {
+          resolve({ error: err.message, isNew: false, ageInDays: null });
+        } else {
+          // Simplified age calculation
+          const creationMatch = data.match(/Creation Date: (.+)/);
+          if (creationMatch) {
+            const creationDate = new Date(creationMatch[1]);
+            const now = new Date();
+            const ageInDays = Math.floor((now - creationDate) / (1000 * 60 * 60 * 24));
+            resolve({
+              creationDate: creationMatch[1],
+              ageInDays: ageInDays,
+              isNew: ageInDays < 90
+            });
+          } else {
+            resolve({ isNew: false, ageInDays: null });
+          }
+        }
+      });
+    });
+  }
+
+  async analyzeContent(url) {
+    const analysis = {
+      accessible: false,
+      score: 0,
+      issues: [],
+      details: {}
+    };
+
+    try {
+      const response = await axios.get(url, {
+        timeout: 10000,
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        },
+        maxRedirects: 5
+      });
+
+      analysis.accessible = true;
+      analysis.details.statusCode = response.status;
+      analysis.details.contentLength = response.data.length;
+
+      const $ = cheerio.load(response.data);
+      
+      // Check for suspicious content
+      const title = $('title').text().toLowerCase();
+      const bodyText = $('body').text().toLowerCase();
+
+      // Check for urgent language
+      const urgentWords = ['urgent', 'immediate', 'verify now', 'act now', 'expires soon'];
+      const hasUrgentLanguage = urgentWords.some(word => 
+        title.includes(word) || bodyText.includes(word)
+      );
+
+      if (hasUrgentLanguage) {
+        analysis.score += 10;
+        analysis.issues.push('Contains urgent language');
+      }
+
+      // Check for form fields
+      const formFields = $('input[type="password"], input[type="text"]').length;
+      if (formFields > 3) {
+        analysis.score += 8;
+        analysis.issues.push('Contains many input fields');
+      }
+
+      // Check for external resources
+      const parsedUrl = new URL(url);
+      const currentHostname = parsedUrl.hostname;
+      const externalScripts = $('script[src]').filter(function() {
+        const src = $(this).attr('src');
+        return src && !src.startsWith('/') && !src.includes(currentHostname);
+      }).length;
+
+      if (externalScripts > 5) {
+        analysis.score += 5;
+        analysis.issues.push('Many external scripts loaded');
+      }
+
+      analysis.details = {
+        title: $('title').text(),
+        hasForms: $('form').length > 0,
+        formFields: formFields,
+        externalScripts: externalScripts,
+        hasUrgentLanguage: hasUrgentLanguage
+      };
+
+    } catch (error) {
+      analysis.accessible = false;
+      analysis.details.error = error.message;
+      
+      if (error.code === 'ENOTFOUND') {
+        analysis.score += 20;
+        analysis.issues.push('Domain not found');
+      } else if (error.code === 'ECONNREFUSED') {
+        analysis.score += 15;
+        analysis.issues.push('Connection refused');
+      }
+    }
+
+    return analysis;
+  }
+
+  async checkSSL(url) {
+    const analysis = {
+      hasSSL: false,
+      score: 0,
+      issues: [],
+      details: {}
+    };
+
+    try {
+      if (url.startsWith('https://')) {
+        analysis.hasSSL = true;
+        analysis.details.protocol = 'HTTPS';
+        
+        // In a real implementation, you'd check certificate validity
+        // For now, we'll just check if HTTPS is used
+      } else {
+        analysis.score += 20;
+        analysis.issues.push('No SSL certificate (HTTP instead of HTTPS)');
+        analysis.details.protocol = 'HTTP';
+      }
+    } catch (error) {
+      analysis.score += 15;
+      analysis.issues.push('SSL check failed');
+      analysis.details.error = error.message;
+    }
+
+    return analysis;
+  }
+
+  determineRiskLevel(score) {
+    if (score >= 70) return 'HIGH';
+    if (score >= 40) return 'MEDIUM';
+    if (score >= 20) return 'LOW-MEDIUM';
+    return 'LOW';
+  }
+
+  generateRecommendations(analysis) {
+    const recommendations = [];
+
+    if (analysis.isPhishing) {
+      recommendations.push('🚨 HIGH RISK: Do not enter any personal information');
+      recommendations.push('❌ Do not click on any links in this website');
+      recommendations.push('🔒 Report this site to your security team');
+    }
+
+    if (analysis.details.urlAnalysis?.issues.length > 0) {
+      recommendations.push('⚠️ URL structure shows suspicious patterns');
+    }
+
+    if (!analysis.details.sslAnalysis?.hasSSL) {
+      recommendations.push('🔓 Website does not use SSL encryption');
+    }
+
+    if (analysis.details.domainAnalysis?.issues.includes('Domain not in trusted list')) {
+      recommendations.push('🔍 Verify this is the official website');
+    }
+
+    if (analysis.riskScore < 20) {
+      recommendations.push('✅ Website appears to be legitimate');
+    }
+
+    return recommendations;
+  }
+}
+
+module.exports = new PhishingDetector();
