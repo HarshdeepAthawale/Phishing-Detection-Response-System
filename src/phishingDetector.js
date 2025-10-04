@@ -223,26 +223,37 @@ class PhishingDetector {
 
   async getDomainAge(hostname) {
     return new Promise((resolve) => {
-      whois.lookup(hostname, (err, data) => {
-        if (err) {
-          resolve({ error: err.message, isNew: false, ageInDays: null });
-        } else {
-          // Simplified age calculation
-          const creationMatch = data.match(/Creation Date: (.+)/);
-          if (creationMatch) {
-            const creationDate = new Date(creationMatch[1]);
-            const now = new Date();
-            const ageInDays = Math.floor((now - creationDate) / (1000 * 60 * 60 * 24));
-            resolve({
-              creationDate: creationMatch[1],
-              ageInDays: ageInDays,
-              isNew: ageInDays < 90
-            });
+      try {
+        whois.lookup(hostname, (err, data) => {
+          if (err) {
+            console.warn('WHOIS lookup failed:', err.message);
+            resolve({ error: err.message, isNew: false, ageInDays: null });
           } else {
-            resolve({ isNew: false, ageInDays: null });
+            try {
+              // Simplified age calculation
+              const creationMatch = data.match(/Creation Date: (.+)/);
+              if (creationMatch) {
+                const creationDate = new Date(creationMatch[1]);
+                const now = new Date();
+                const ageInDays = Math.floor((now - creationDate) / (1000 * 60 * 60 * 24));
+                resolve({
+                  creationDate: creationMatch[1],
+                  ageInDays: ageInDays,
+                  isNew: ageInDays < 90
+                });
+              } else {
+                resolve({ isNew: false, ageInDays: null });
+              }
+            } catch (parseError) {
+              console.warn('Date parsing failed:', parseError.message);
+              resolve({ isNew: false, ageInDays: null });
+            }
           }
-        }
-      });
+        });
+      } catch (error) {
+        console.warn('WHOIS lookup error:', error.message);
+        resolve({ error: error.message, isNew: false, ageInDays: null });
+      }
     });
   }
 

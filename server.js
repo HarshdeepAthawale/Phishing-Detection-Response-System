@@ -170,7 +170,11 @@ app.use((req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Phishing Detection Server running on port ${PORT}`);
+// For Render deployment, bind to all interfaces
+const host = process.env.HOST || '0.0.0.0';
+
+app.listen(PORT, host, () => {
+  console.log(`🚀 Phishing Detection Server running on ${host}:${PORT}`);
   console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
+  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
 });

@@ -1,10 +1,10 @@
 services:
-  - type: web
+  - type: WebService
     name: phishing-detection-api
-    env: node
+    env: Node
     plan: free
     buildCommand: npm install
-    startCommand: npm start
+    startCommand: npm run start
     envVars:
       - key: NODE_ENV
         value: production
@@ -12,5 +12,6 @@ services:
         value: https://phishing-detection-response-system.vercel.app
       - key: PORT
         value: 10000
+      - key: HOST
+        value: 0.0.0.0
     healthCheckPath: /api/health
-    region: oregon
