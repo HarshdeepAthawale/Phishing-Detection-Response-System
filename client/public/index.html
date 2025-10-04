@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" suppressHydrationWarning>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -7,9 +7,20 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Phishing Detection and Response System - Stay safe online"
+      content="v0 App - Created with v0"
     />
-    <title>Phishing Detection System</title>
+    <meta name="generator" content="v0.app" />
+    <title>v0 App</title>
+    <script>
+      (function () {
+        try {
+          const stored = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const isDark = stored ? stored === 'dark' : prefersDark;
+          document.documentElement.classList.toggle('dark', isDark);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

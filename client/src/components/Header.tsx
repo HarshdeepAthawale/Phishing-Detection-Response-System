@@ -1,34 +1,21 @@
 import React from 'react';
-import { Shield, Lock, AlertTriangle } from 'lucide-react';
-import DarkModeToggle from './DarkModeToggle';
+import ThemeToggle from './ThemeToggle';
+import Button from './ui/Button';
+import { Shield } from 'lucide-react';
 
 const Header: React.FC = () => {
   return (
-    <header className="py-6">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="p-2 bg-white/20 rounded-lg dark:bg-gray-800/30
-                           hover:bg-white/30 dark:hover:bg-gray-700/40 transition-all duration-300">
-              <Shield className="w-8 h-8 text-white dark:text-gray-200" />
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold text-white dark:text-gray-100">PhishGuard</h1>
-              <p className="text-white/70 text-sm dark:text-gray-400">Security Scanner</p>
-            </div>
+    <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 glass-effect">
+      <div className="container mx-auto flex h-14 items-center justify-between px-4">
+        <div className="flex items-center gap-3">
+          <div className="h-7 w-7 rounded-md bg-primary flex items-center justify-center" aria-hidden>
+            <Shield className="h-4 w-4 text-primary-foreground" />
           </div>
-          
-          <div className="flex items-center space-x-4">
-            <div className="hidden md:flex items-center space-x-2 text-white/80 dark:text-gray-300">
-              <Lock className="w-4 h-4" />
-              <span className="text-sm">Secure Analysis</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-2 text-white/80 dark:text-gray-300">
-              <AlertTriangle className="w-4 h-4" />
-              <span className="text-sm">Real-time Detection</span>
-            </div>
-            <DarkModeToggle />
-          </div>
+          <span className="text-sm md:text-base font-semibold">Phishing Detection and Response System</span>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
         </div>
       </div>
     </header>
