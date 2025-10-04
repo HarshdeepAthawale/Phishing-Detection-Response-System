@@ -150,7 +150,7 @@ const performClientSideAnalysis = (url: string): AnalysisResult => {
   // 3. Suspicious characters (20 points)
   if (url.includes('@') || url.includes('\\') || url.includes('%')) {
     analysis.riskScore += 20;
-    analysis.details!.urlAnalysis!.issues.push('Contains suspicious characters (@, \, %)');
+    analysis.details!.urlAnalysis!.issues.push('Contains suspicious characters (@, \\, %)');
   }
 
   // 4. URL length (5 points)

@@ -6,7 +6,6 @@ import {
   XCircle, 
   Lock, 
   Globe, 
-  Clock,
   ExternalLink,
   Info
 } from 'lucide-react';
