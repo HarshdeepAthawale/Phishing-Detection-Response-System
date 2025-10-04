@@ -8,5 +8,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "installCommand": "npm install",
-  "framework": "react-scripts"
+  "framework": "create-react-app"
 }
