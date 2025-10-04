@@ -3,15 +3,14 @@ const cors = require('cors');
 const helmet = require('helmet');
 const { RateLimiterMemory } = require('rate-limiter-flexible');
 const dotenv = require('dotenv');
-const connectDB = require('./src/config/database');
-const AnalysisResult = require('./src/models/analysisResult');
+const { initStorage, saveAnalysis, getAnalytics } = require('./src/config/localStorage');
 const phishingDetector = require('./src/phishingDetector');
 
 // Load environment variables
 dotenv.config();
 
-// Connect to MongoDB
-connectDB();
+// Initialize local storage
+initStorage();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -88,16 +87,15 @@ app.post('/api/detect', async (req, res) => {
     // Perform phishing detection
     const result = await phishingDetector.analyzeUrl(url);
     
-    // Save analysis result to MongoDB
+    // Save analysis result to local storage
     try {
-      const analysisRecord = new AnalysisResult({
+      await saveAnalysis({
         ...result,
         ipAddress: req.ip,
         userAgent: req.get('User-Agent')
       });
-      await analysisRecord.save();
-    } catch (dbError) {
-      console.error('Database save error:', dbError);
+    } catch (storageError) {
+      console.error('Local storage save error:', storageError);
       // Continue without failing the request
     }
     
@@ -119,31 +117,11 @@ app.post('/api/detect', async (req, res) => {
 // Analytics endpoint
 app.get('/api/analytics', async (req, res) => {
   try {
-    const totalAnalyses = await AnalysisResult.countDocuments();
-    const phishingCount = await AnalysisResult.countDocuments({ isPhishing: true });
-    const recentAnalyses = await AnalysisResult.find()
-      .sort({ createdAt: -1 })
-      .limit(10)
-      .select('url isPhishing riskScore createdAt');
+    const analytics = await getAnalytics();
     
-    const riskLevelStats = await AnalysisResult.aggregate([
-      {
-        $group: {
-          _id: '$riskLevel',
-          count: { $sum: 1 }
-        }
-      }
-    ]);
-
     res.json({
       success: true,
-      data: {
-        totalAnalyses,
-        phishingCount,
-        phishingPercentage: totalAnalyses > 0 ? ((phishingCount / totalAnalyses) * 100).toFixed(2) : 0,
-        recentAnalyses,
-        riskLevelStats
-      }
+      data: analytics
     });
   } catch (error) {
     console.error('Analytics error:', error);

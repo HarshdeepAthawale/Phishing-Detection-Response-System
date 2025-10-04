@@ -8,14 +8,5 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: MONGODB_URI
-        fromDatabase:
-          name: phishing-detection-db
-          property: connectionString
       - key: FRONTEND_URL
-        value: https://your-frontend-domain.vercel.app
-
-databases:
-  - name: phishing-detection-db
-    databaseName: phishing-detection
-    user: phishing-detection-user
+        value: https://your-vercel-app-name.vercel.app
