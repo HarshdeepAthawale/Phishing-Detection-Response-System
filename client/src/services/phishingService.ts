@@ -2,7 +2,7 @@ import axios from 'axios';
 import { AnalysisResult } from '../types';
 
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? process.env.REACT_APP_API_URL || 'https://your-render-app-name.onrender.com/api'
+  ? process.env.REACT_APP_API_URL || 'https://phishing-detection-response-system.onrender.com/api'
   : 'http://localhost:5000/api';
 
 export const analyzeUrl = async (url: string): Promise<AnalysisResult> => {
