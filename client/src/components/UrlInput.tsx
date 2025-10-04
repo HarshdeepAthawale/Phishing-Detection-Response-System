@@ -76,12 +76,15 @@ const UrlInput: React.FC<UrlInputProps> = ({
   };
 
   return (
-    <div className="glass-effect rounded-2xl p-8 shadow-2xl">
+    <div className="glass-effect rounded-2xl p-8 shadow-2xl
+                   dark:bg-gray-800/30 dark:border-gray-700/50
+                   hover:shadow-3xl transition-all duration-300
+                   animate-fade-in-up">
       <div className="text-center mb-6">
-        <h2 className="text-3xl font-bold text-white mb-2">
+        <h2 className="text-3xl font-bold text-white mb-2 dark:text-gray-100">
           Enter URL to Analyze
         </h2>
-        <p className="text-white/80">
+        <p className="text-white/80 dark:text-gray-300">
           Get instant security analysis of any website
         </p>
       </div>
@@ -98,14 +101,17 @@ const UrlInput: React.FC<UrlInputProps> = ({
             placeholder="https://example.com"
             className={`w-full pl-12 pr-4 py-4 text-lg rounded-xl border-2 ${getInputBorderColor()} 
                      bg-white/10 backdrop-blur-sm text-white placeholder-white/50 
+                     dark:bg-gray-700/50 dark:text-gray-100 dark:placeholder-gray-400
+                     dark:border-gray-600 dark:focus:border-gray-400
                      focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent
+                     dark:focus:ring-gray-400/50
                      transition-all duration-300`}
             disabled={isLoading}
           />
         </div>
 
         {url.length > 0 && isValid === false && (
-          <p className="text-red-300 text-sm flex items-center space-x-2">
+          <p className="text-red-300 text-sm flex items-center space-x-2 dark:text-red-400">
             <AlertCircle className="w-4 h-4" />
             <span>Please enter a valid URL starting with http:// or https://</span>
           </p>
@@ -135,7 +141,7 @@ const UrlInput: React.FC<UrlInputProps> = ({
       </form>
 
       <div className="mt-6 text-center">
-        <p className="text-white/60 text-sm">
+        <p className="text-white/60 text-sm dark:text-gray-400">
           🔒 Your analysis is completely private and secure
         </p>
       </div>

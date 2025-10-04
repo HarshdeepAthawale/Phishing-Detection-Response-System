@@ -72,13 +72,16 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ result }) => {
   const mainMessage = getMainMessage();
 
   return (
-    <div className="mt-8 space-y-6">
+    <div className="mt-8 space-y-6 animate-fade-in-up">
       {/* Main Result */}
-      <div className={`glass-effect rounded-2xl p-8 border-2 ${getRiskBgColor(result.riskLevel)}`}>
+      <div className={`glass-effect rounded-2xl p-8 border-2 ${getRiskBgColor(result.riskLevel)}
+                       dark:bg-gray-800/30 dark:border-gray-700/50`}>
         <div className="text-center">
           {result.details.clientSideAnalysis && (
-            <div className="mb-4 p-3 bg-blue-500/20 border border-blue-500/50 rounded-lg">
-              <p className="text-blue-200 text-sm flex items-center justify-center space-x-2">
+            <div className="mb-4 p-3 bg-blue-500/20 border border-blue-500/50 rounded-lg
+                           dark:bg-blue-900/30 dark:border-blue-400/50">
+              <p className="text-blue-200 text-sm flex items-center justify-center space-x-2
+                           dark:text-blue-300">
                 <Info className="w-4 h-4" />
                 <span>Basic client-side analysis performed</span>
               </p>
@@ -90,10 +93,10 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ result }) => {
           <h2 className={`text-3xl font-bold mb-2 ${mainMessage.color}`}>
             {mainMessage.title}
           </h2>
-          <p className="text-white/80 text-lg mb-4">
+          <p className="text-white/80 text-lg mb-4 dark:text-gray-300">
             {mainMessage.subtitle}
           </p>
-          <div className="flex items-center justify-center space-x-4 text-white/70">
+          <div className="flex items-center justify-center space-x-4 text-white/70 dark:text-gray-400">
             <span>Risk Score: {result.riskScore}/100</span>
             <span>•</span>
             <span className={getRiskColor(result.riskLevel)}>
@@ -104,12 +107,12 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ result }) => {
       </div>
 
       {/* URL Information */}
-      <div className="glass-effect rounded-xl p-6">
-        <h3 className="text-xl font-semibold text-white mb-4 flex items-center space-x-2">
+      <div className="glass-effect rounded-xl p-6 dark:bg-gray-800/30 dark:border-gray-700/50">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center space-x-2 dark:text-gray-100">
           <Globe className="w-5 h-5" />
           <span>Website Information</span>
         </h3>
-        <div className="space-y-2 text-white/80">
+        <div className="space-y-2 text-white/80 dark:text-gray-300">
           <div>
             <span className="font-medium">URL:</span> 
             <span className="ml-2 break-all">{result.url}</span>
@@ -133,12 +136,12 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ result }) => {
       <div className="grid md:grid-cols-2 gap-6">
         {/* URL Analysis */}
         {result.details.urlAnalysis && (
-          <div className="glass-effect rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
+          <div className="glass-effect rounded-xl p-6 dark:bg-gray-800/30 dark:border-gray-700/50">
+            <h3 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2 dark:text-gray-100">
               <ExternalLink className="w-5 h-5" />
               <span>URL Analysis</span>
             </h3>
-            <div className="space-y-2 text-white/80">
+            <div className="space-y-2 text-white/80 dark:text-gray-300">
               <div>Score Impact: {result.details.urlAnalysis.score} points</div>
               {result.details.urlAnalysis.issues.length > 0 && (
                 <div>
@@ -156,12 +159,12 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ result }) => {
 
         {/* SSL Analysis */}
         {result.details.sslAnalysis && (
-          <div className="glass-effect rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
+          <div className="glass-effect rounded-xl p-6 dark:bg-gray-800/30 dark:border-gray-700/50">
+            <h3 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2 dark:text-gray-100">
               <Lock className="w-5 h-5" />
               <span>SSL Security</span>
             </h3>
-            <div className="space-y-2 text-white/80">
+            <div className="space-y-2 text-white/80 dark:text-gray-300">
               <div className="flex items-center space-x-2">
                 {result.details.sslAnalysis.hasSSL ? (
                   <CheckCircle className="w-4 h-4 text-green-400" />
@@ -256,14 +259,15 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ result }) => {
 
       {/* Recommendations */}
       {result.recommendations.length > 0 && (
-        <div className="glass-effect rounded-xl p-6">
-          <h3 className="text-xl font-semibold text-white mb-4 flex items-center space-x-2">
+        <div className="glass-effect rounded-xl p-6 dark:bg-gray-800/30 dark:border-gray-700/50">
+          <h3 className="text-xl font-semibold text-white mb-4 flex items-center space-x-2 dark:text-gray-100">
             <AlertTriangle className="w-5 h-5" />
             <span>Security Recommendations</span>
           </h3>
           <div className="space-y-3">
             {result.recommendations.map((recommendation, index) => (
-              <div key={index} className="flex items-start space-x-3 p-3 bg-white/5 rounded-lg">
+              <div key={index} className="flex items-start space-x-3 p-3 bg-white/5 rounded-lg
+                                        dark:bg-gray-700/30 dark:border dark:border-gray-600/30">
                 <div className="flex-shrink-0 mt-0.5">
                   {recommendation.includes('🚨') ? (
                     <XCircle className="w-4 h-4 text-red-400" />
@@ -273,7 +277,7 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ result }) => {
                     <Info className="w-4 h-4 text-blue-400" />
                   )}
                 </div>
-                <p className="text-white/90 text-sm">{recommendation}</p>
+                <p className="text-white/90 text-sm dark:text-gray-300">{recommendation}</p>
               </div>
             ))}
           </div>
