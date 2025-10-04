@@ -4,6 +4,7 @@ export interface AnalysisResult {
   riskScore: number;
   riskLevel: 'LOW' | 'LOW-MEDIUM' | 'MEDIUM' | 'HIGH';
   details: {
+    clientSideAnalysis?: boolean;
     parsedUrl?: {
       hostname: string;
       protocol: string;

@@ -76,6 +76,14 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ result }) => {
       {/* Main Result */}
       <div className={`glass-effect rounded-2xl p-8 border-2 ${getRiskBgColor(result.riskLevel)}`}>
         <div className="text-center">
+          {result.details.clientSideAnalysis && (
+            <div className="mb-4 p-3 bg-blue-500/20 border border-blue-500/50 rounded-lg">
+              <p className="text-blue-200 text-sm flex items-center justify-center space-x-2">
+                <Info className="w-4 h-4" />
+                <span>Basic client-side analysis performed</span>
+              </p>
+            </div>
+          )}
           <div className="flex justify-center mb-4">
             {getMainIcon()}
           </div>
