@@ -2,6 +2,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const Url = require('url-parse');
 const whois = require('whois');
+const DomainReputationService = require('./services/domainReputationService');
 
 class PhishingDetector {
   constructor() {
@@ -11,6 +12,10 @@ class PhishingDetector {
       'amazon', 'apple', 'microsoft', 'google', 'facebook'
     ];
     
+    // Initialize domain reputation service
+    this.domainReputationService = new DomainReputationService();
+    
+    // Keep fallback trusted domains for backward compatibility
     this.trustedDomains = [
       'google.com', 'amazon.com', 'paypal.com', 'apple.com',
       'microsoft.com', 'facebook.com', 'twitter.com', 'linkedin.com',
@@ -149,14 +154,47 @@ class PhishingDetector {
       return analysis;
     }
 
-    // Check if domain is in trusted list
-    const isTrusted = this.trustedDomains.some(domain => 
-      hostname === domain || hostname.endsWith('.' + domain)
-    );
+    try {
+      // Use external domain reputation service
+      const reputationResult = await this.domainReputationService.getDomainReputation(hostname);
+      
+      analysis.details.reputation = reputationResult;
+      analysis.details.isTrusted = reputationResult.isTrusted;
+      
+      // Adjust risk score based on reputation
+      if (!reputationResult.isTrusted) {
+        const riskPenalty = 100 - reputationResult.reputationScore;
+        analysis.score += Math.min(riskPenalty * 0.3, 15); // Cap at 15 points
+        
+        if (reputationResult.issues && reputationResult.issues.length > 0) {
+          analysis.issues.push(...reputationResult.issues);
+        } else if (!reputationResult.fallback) {
+          analysis.issues.push('Domain has low reputation score');
+        } else {
+          analysis.issues.push('Domain not in trusted list (fallback mode)');
+        }
+      }
+      
+      // Add confidence information
+      analysis.details.confidence = reputationResult.confidence;
+      analysis.details.sources = reputationResult.sources;
+      
+    } catch (error) {
+      console.error('Domain reputation check failed:', error);
+      
+      // Fallback to original logic if API fails
+      const isTrusted = this.trustedDomains.some(domain => 
+        hostname === domain || hostname.endsWith('.' + domain)
+      );
 
-    if (!isTrusted) {
-      analysis.score += 5;
-      analysis.issues.push('Domain not in trusted list');
+      if (!isTrusted) {
+        analysis.score += 5;
+        analysis.issues.push('Domain not in trusted list (fallback)');
+      }
+      
+      analysis.details.isTrusted = isTrusted;
+      analysis.details.fallback = true;
+      analysis.details.reputationError = error.message;
     }
 
     // Check for typosquatting patterns
@@ -179,7 +217,6 @@ class PhishingDetector {
       analysis.details.whoisError = error.message;
     }
 
-    analysis.details.isTrusted = isTrusted;
     return analysis;
   }
 

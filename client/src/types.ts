@@ -24,6 +24,9 @@ export interface AnalysisResult {
       issues: string[];
       details: {
         isTrusted: boolean;
+        reputationSource?: string;
+        confidence?: string;
+        fallback?: boolean;
         whois?: {
           creationDate?: string;
           ageInDays?: number;

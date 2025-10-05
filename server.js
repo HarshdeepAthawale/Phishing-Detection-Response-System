@@ -5,6 +5,7 @@ const { RateLimiterMemory } = require('rate-limiter-flexible');
 const dotenv = require('dotenv');
 const { initStorage, saveAnalysis, getAnalytics } = require('./src/config/localStorage');
 const phishingDetector = require('./src/phishingDetector');
+const DomainReputationService = require('./src/services/domainReputationService');
 
 // Load environment variables
 dotenv.config();
@@ -149,6 +150,34 @@ app.get('/api/analytics', async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Failed to fetch analytics'
+    });
+  }
+});
+
+// Domain reputation endpoint
+app.post('/api/domain-reputation', async (req, res) => {
+  try {
+    const { domain } = req.body;
+    
+    if (!domain) {
+      return res.status(400).json({
+        success: false,
+        message: 'Domain is required'
+      });
+    }
+
+    const domainReputationService = new DomainReputationService();
+    const reputation = await domainReputationService.getDomainReputation(domain);
+    
+    res.json({
+      success: true,
+      data: reputation
+    });
+  } catch (error) {
+    console.error('Domain reputation error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to check domain reputation'
     });
   }
 });

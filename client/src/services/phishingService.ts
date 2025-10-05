@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { AnalysisResult } from '../types';
+import DomainReputationService from './domainReputationService';
 
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
   ? process.env.REACT_APP_API_URL || 'https://phishing-detection-api.onrender.com/api'
@@ -57,12 +58,12 @@ export const analyzeUrl = async (url: string): Promise<AnalysisResult> => {
     }
     
     console.warn('🔄 Fallback to client-side analysis');
-    return performClientSideAnalysis(url);
+    return await performClientSideAnalysis(url);
   }
 };
 
 // Enhanced client-side analysis with better phishing detection
-const performClientSideAnalysis = (url: string): AnalysisResult => {
+const performClientSideAnalysis = async (url: string): Promise<AnalysisResult> => {
   console.log('🔄 Performing enhanced client-side analysis for:', url);
   
   const analysis: AnalysisResult = {
@@ -115,22 +116,50 @@ const performClientSideAnalysis = (url: string): AnalysisResult => {
     return analysis;
   }
 
-  // Trusted domains list
-  const trustedDomains = [
-    'google.com', 'youtube.com', 'facebook.com', 'twitter.com', 'instagram.com',
-    'linkedin.com', 'github.com', 'stackoverflow.com', 'amazon.com', 'paypal.com',
-    'apple.com', 'microsoft.com', 'netflix.com', 'spotify.com', 'reddit.com',
-    'wikipedia.org', 'medium.com', 'dropbox.com', 'adobe.com', 'salesforce.com',
-    'zoom.us', 'slack.com', 'discord.com', 'twitch.tv', 'ebay.com'
-  ];
+  // Initialize domain reputation service
+  const domainReputationService = new DomainReputationService();
+  
+  // Check domain reputation using external APIs
+  let domainTrustResult;
+  try {
+    domainTrustResult = await domainReputationService.isDomainTrusted(domain);
+    analysis.details!.domainAnalysis!.details.isTrusted = domainTrustResult.isTrusted;
+    analysis.details!.domainAnalysis!.details.reputationSource = domainTrustResult.source;
+    analysis.details!.domainAnalysis!.details.confidence = domainTrustResult.confidence;
+    analysis.details!.domainAnalysis!.details.fallback = domainTrustResult.fallback;
+  } catch (error) {
+    console.error('Domain reputation check failed:', error);
+    // Fallback to static list
+    const trustedDomains = [
+      'google.com', 'youtube.com', 'facebook.com', 'twitter.com', 'instagram.com',
+      'linkedin.com', 'github.com', 'stackoverflow.com', 'amazon.com', 'paypal.com',
+      'apple.com', 'microsoft.com', 'netflix.com', 'spotify.com', 'reddit.com',
+      'wikipedia.org', 'medium.com', 'dropbox.com', 'adobe.com', 'salesforce.com',
+      'zoom.us', 'slack.com', 'discord.com', 'twitch.tv', 'ebay.com'
+    ];
+    
+    const isTrusted = trustedDomains.includes(domain) || trustedDomains.some(trusted => 
+      domain.endsWith('.' + trusted) || hostname === trusted
+    );
+    analysis.details!.domainAnalysis!.details.isTrusted = isTrusted;
+    analysis.details!.domainAnalysis!.details.fallback = true;
+  }
 
-  // Check if domain is trusted
-  const isTrusted = trustedDomains.includes(domain) || trustedDomains.some(trusted => 
-    domain.endsWith('.' + trusted) || hostname === trusted
-  );
-  analysis.details!.domainAnalysis!.details.isTrusted = isTrusted;
+  // 1. Domain reputation check (dynamic based on external API)
+  if (domainTrustResult && !domainTrustResult.isTrusted) {
+    if (domainTrustResult.fallback) {
+      analysis.riskScore += 5;
+      analysis.details!.domainAnalysis!.issues.push('Domain not in trusted list (fallback mode)');
+    } else {
+      // Dynamic scoring based on reputation confidence
+      const reputationPenalty = domainTrustResult.confidence === 'high' ? 15 : 
+                               domainTrustResult.confidence === 'medium' ? 10 : 5;
+      analysis.riskScore += reputationPenalty;
+      analysis.details!.domainAnalysis!.issues.push(`Domain has low reputation (${domainTrustResult.confidence} confidence)`);
+    }
+  }
 
-  // 1. HTTP vs HTTPS (15 points)
+  // 2. HTTP vs HTTPS (15 points)
   if (!url.startsWith('https://') && !hostname.includes('localhost')) {
     analysis.riskScore += 15;
     analysis.details!.urlAnalysis!.issues.push('Uses HTTP instead of HTTPS');
@@ -221,8 +250,8 @@ const performClientSideAnalysis = (url: string): AnalysisResult => {
     analysis.details!.domainAnalysis!.issues.push('Too many hyphens in domain');
   }
 
-  // 10. Non-trusted domain penalty (5 points)
-  if (!isTrusted && analysis.riskScore < 20) {
+  // 10. Non-trusted domain penalty (5 points) - only if we have domain trust result
+  if (domainTrustResult && !domainTrustResult.isTrusted && analysis.riskScore < 20) {
     analysis.riskScore += 5;
     analysis.details!.domainAnalysis!.issues.push('Domain not in trusted list');
   }
@@ -253,8 +282,8 @@ const performClientSideAnalysis = (url: string): AnalysisResult => {
     analysis.recommendations.push('🔍 Double-check the website URL');
   } else {
     analysis.recommendations.push('✅ URL appears to be legitimate');
-    if (isTrusted) {
-      analysis.recommendations.push('✅ Domain is in trusted list');
+    if (domainTrustResult && domainTrustResult.isTrusted) {
+      analysis.recommendations.push('✅ Domain is trusted');
     }
   }
 

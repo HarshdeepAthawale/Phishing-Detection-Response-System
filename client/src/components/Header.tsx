@@ -1,6 +1,5 @@
 import React from 'react';
 import ThemeToggle from './ThemeToggle';
-import Button from './ui/Button';
 import { Shield } from 'lucide-react';
 
 const Header: React.FC = () => {
