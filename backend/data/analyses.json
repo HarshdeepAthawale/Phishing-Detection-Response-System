@@ -1,0 +1,3332 @@
+[
+  {
+    "url": "https://tryhackme.com/",
+    "isPhishing": false,
+    "riskScore": 15,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "tryhackme.com",
+        "protocol": "https:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 22,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "tryhackme.com",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "2018-07-05T19:46:15.00Z",
+            "ageInDays": 2648,
+            "isNew": false
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "TryHackMe | Cyber Security Training",
+          "hasForms": false,
+          "formFields": 0,
+          "externalScripts": 2,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      }
+    },
+    "recommendations": [
+      "🔍 Verify this is the official website",
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759662977350qc7xqrjy7",
+    "createdAt": "2025-10-05T11:16:17.350Z"
+  },
+  {
+    "url": "https://gemini.google.com/app",
+    "isPhishing": false,
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "gemini.google.com",
+        "protocol": "https:",
+        "pathname": "/app"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 29,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "gemini.google.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "‎Google Gemini",
+          "hasForms": false,
+          "formFields": 0,
+          "externalScripts": 2,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      }
+    },
+    "recommendations": [
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759663005389hiyuktrux",
+    "createdAt": "2025-10-05T11:16:45.389Z"
+  },
+  {
+    "url": "https://google.com",
+    "isPhishing": false,
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "google.com",
+        "protocol": "https:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 18,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "google.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "1997-09-15T07:00:00+0000",
+            "ageInDays": 10247,
+            "isNew": false
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "Google",
+          "hasForms": true,
+          "formFields": 0,
+          "externalScripts": 0,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "safeBrowsingAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "url": "https://google.com",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "unknown",
+          "source": "Google Safe Browsing",
+          "error": "Request contains an invalid argument.",
+          "lastChecked": "2025-10-05T16:35:42.430Z"
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "Google Safe Browsing"
+      }
+    },
+    "recommendations": [
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.6725",
+    "_id": "1759682143032d29atxjki",
+    "createdAt": "2025-10-05T16:35:43.032Z"
+  },
+  {
+    "url": "https://google.com",
+    "isPhishing": false,
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "google.com",
+        "protocol": "https:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 18,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "google.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "1997-09-15T07:00:00+0000",
+            "ageInDays": 10247,
+            "isNew": false
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "Google",
+          "hasForms": true,
+          "formFields": 0,
+          "externalScripts": 0,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "safeBrowsingAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "url": "https://google.com",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "unknown",
+          "source": "Google Safe Browsing",
+          "error": "Request contains an invalid argument.",
+          "lastChecked": "2025-10-05T16:36:31.538Z"
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "Google Safe Browsing"
+      }
+    },
+    "recommendations": [
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "axios/1.12.2",
+    "_id": "1759682192330grmm49tlo",
+    "createdAt": "2025-10-05T16:36:32.330Z"
+  },
+  {
+    "url": "https://google.com",
+    "isPhishing": false,
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "google.com",
+        "protocol": "https:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 18,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "google.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "1997-09-15T07:00:00+0000",
+            "ageInDays": 10247,
+            "isNew": false
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "Google",
+          "hasForms": true,
+          "formFields": 0,
+          "externalScripts": 0,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "safeBrowsingAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "Google Safe Browsing service unavailable",
+          "serviceStatus": {
+            "available": false,
+            "error": "API not fully configured: Request contains an invalid argument.",
+            "serviceName": "Google Safe Browsing API",
+            "version": "v4"
+          }
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "Google Safe Browsing"
+      }
+    },
+    "recommendations": [
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.6725",
+    "_id": "1759683580373mqlryvpa3",
+    "createdAt": "2025-10-05T16:59:40.373Z"
+  },
+  {
+    "url": "https://www.linkedin.com/",
+    "isPhishing": false,
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "www.linkedin.com",
+        "protocol": "https:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 25,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "www.linkedin.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "LinkedIn: Log In or Sign Up",
+          "hasForms": true,
+          "formFields": 0,
+          "externalScripts": 2,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "safeBrowsingAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "Google Safe Browsing service unavailable",
+          "serviceStatus": {
+            "available": false,
+            "error": "API not fully configured: Request contains an invalid argument.",
+            "serviceName": "Google Safe Browsing API",
+            "version": "v4"
+          }
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "Google Safe Browsing"
+      }
+    },
+    "recommendations": [
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759684047924v4tej40ry",
+    "createdAt": "2025-10-05T17:07:27.924Z"
+  },
+  {
+    "url": "http://swiat-kamienia.pl/en/",
+    "isPhishing": true,
+    "riskScore": 50,
+    "riskLevel": "MEDIUM",
+    "details": {
+      "parsedUrl": {
+        "hostname": "swiat-kamienia.pl",
+        "protocol": "http:",
+        "pathname": "/en/"
+      },
+      "urlAnalysis": {
+        "score": 15,
+        "issues": [
+          "Uses HTTP instead of HTTPS"
+        ],
+        "details": {
+          "length": 28,
+          "hasHTTPS": false,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "swiat-kamienia.pl",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "timeout of 10000ms exceeded"
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": false,
+        "score": 20,
+        "issues": [
+          "No SSL certificate (HTTP instead of HTTPS)"
+        ],
+        "details": {
+          "protocol": "HTTP"
+        }
+      },
+      "safeBrowsingAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "Google Safe Browsing service unavailable",
+          "serviceStatus": {
+            "available": false,
+            "error": "API not fully configured: Request contains an invalid argument.",
+            "serviceName": "Google Safe Browsing API",
+            "version": "v4"
+          }
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "Google Safe Browsing"
+      }
+    },
+    "recommendations": [
+      "🚨 HIGH RISK: Do not enter any personal information",
+      "❌ Do not click on any links in this website",
+      "🔒 Report this site to your security team",
+      "⚠️ URL structure shows suspicious patterns",
+      "🔓 Website does not use SSL encryption",
+      "🔍 Verify this is the official website"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759684104014ibzjgnqph",
+    "createdAt": "2025-10-05T17:08:24.014Z"
+  },
+  {
+    "url": "http://sasi-studio.net",
+    "isPhishing": true,
+    "riskScore": 50,
+    "riskLevel": "MEDIUM",
+    "details": {
+      "parsedUrl": {
+        "hostname": "sasi-studio.net",
+        "protocol": "http:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 15,
+        "issues": [
+          "Uses HTTP instead of HTTPS"
+        ],
+        "details": {
+          "length": 22,
+          "hasHTTPS": false,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "sasi-studio.net",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "2025-05-16T15:03:05",
+            "ageInDays": 142,
+            "isNew": false
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "Request failed with status code 403"
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": false,
+        "score": 20,
+        "issues": [
+          "No SSL certificate (HTTP instead of HTTPS)"
+        ],
+        "details": {
+          "protocol": "HTTP"
+        }
+      },
+      "safeBrowsingAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "Google Safe Browsing service unavailable",
+          "serviceStatus": {
+            "available": false,
+            "error": "API not fully configured: Request contains an invalid argument.",
+            "serviceName": "Google Safe Browsing API",
+            "version": "v4"
+          }
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "Google Safe Browsing"
+      }
+    },
+    "recommendations": [
+      "🚨 HIGH RISK: Do not enter any personal information",
+      "❌ Do not click on any links in this website",
+      "🔒 Report this site to your security team",
+      "⚠️ URL structure shows suspicious patterns",
+      "🔓 Website does not use SSL encryption",
+      "🔍 Verify this is the official website"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "17596841420087p9fyqnsa",
+    "createdAt": "2025-10-05T17:09:02.008Z"
+  },
+  {
+    "url": "http://profintravia.info",
+    "isPhishing": true,
+    "riskScore": 50,
+    "riskLevel": "MEDIUM",
+    "details": {
+      "parsedUrl": {
+        "hostname": "profintravia.info",
+        "protocol": "http:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 15,
+        "issues": [
+          "Uses HTTP instead of HTTPS"
+        ],
+        "details": {
+          "length": 24,
+          "hasHTTPS": false,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "profintravia.info",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "Request failed with status code 403"
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": false,
+        "score": 20,
+        "issues": [
+          "No SSL certificate (HTTP instead of HTTPS)"
+        ],
+        "details": {
+          "protocol": "HTTP"
+        }
+      },
+      "safeBrowsingAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "Google Safe Browsing service unavailable",
+          "serviceStatus": {
+            "available": false,
+            "error": "API not fully configured: Request contains an invalid argument.",
+            "serviceName": "Google Safe Browsing API",
+            "version": "v4"
+          }
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "Google Safe Browsing"
+      }
+    },
+    "recommendations": [
+      "🚨 HIGH RISK: Do not enter any personal information",
+      "❌ Do not click on any links in this website",
+      "🔒 Report this site to your security team",
+      "⚠️ URL structure shows suspicious patterns",
+      "🔓 Website does not use SSL encryption",
+      "🔍 Verify this is the official website"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759684203798fwea8qw3x",
+    "createdAt": "2025-10-05T17:10:03.798Z"
+  },
+  {
+    "url": "https://tryhackme.com",
+    "isPhishing": false,
+    "riskScore": 15,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "tryhackme.com",
+        "protocol": "https:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 21,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "tryhackme.com",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "2018-07-05T19:46:15.00Z",
+            "ageInDays": 2648,
+            "isNew": false
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "TryHackMe | Cyber Security Training",
+          "hasForms": false,
+          "formFields": 0,
+          "externalScripts": 2,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "safeBrowsingAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "Google Safe Browsing service unavailable",
+          "serviceStatus": {
+            "available": false,
+            "error": "API not fully configured: Request contains an invalid argument.",
+            "serviceName": "Google Safe Browsing API",
+            "version": "v4"
+          }
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "Google Safe Browsing"
+      }
+    },
+    "recommendations": [
+      "🔍 Verify this is the official website",
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759684240223iblap4sks",
+    "createdAt": "2025-10-05T17:10:40.223Z"
+  },
+  {
+    "url": "https://google.com",
+    "isPhishing": false,
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "google.com",
+        "protocol": "https:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 18,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "google.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "1997-09-15T07:00:00+0000",
+            "ageInDays": 10247,
+            "isNew": false
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "Google",
+          "hasForms": true,
+          "formFields": 0,
+          "externalScripts": 0,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "safeBrowsingAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "Google Safe Browsing service unavailable",
+          "serviceStatus": {
+            "available": false,
+            "enabled": false,
+            "error": "Google Safe Browsing is disabled",
+            "serviceName": "Google Safe Browsing API",
+            "version": "v4"
+          }
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "Google Safe Browsing"
+      }
+    },
+    "recommendations": [
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.6725",
+    "_id": "1759684386176vwu3tng53",
+    "createdAt": "2025-10-05T17:13:06.177Z"
+  },
+  {
+    "url": "https://www.linkedin.com/in/harshdeepathawale/",
+    "isPhishing": false,
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "www.linkedin.com",
+        "protocol": "https:",
+        "pathname": "/in/harshdeepathawale/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 46,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "www.linkedin.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "Request failed with status code 999"
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "safeBrowsingAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "Google Safe Browsing service unavailable",
+          "serviceStatus": {
+            "available": false,
+            "enabled": false,
+            "error": "Google Safe Browsing is disabled",
+            "serviceName": "Google Safe Browsing API",
+            "version": "v4"
+          }
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "Google Safe Browsing"
+      }
+    },
+    "recommendations": [
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "17596844288634bha3tdej",
+    "createdAt": "2025-10-05T17:13:48.863Z"
+  },
+  {
+    "url": "https://google.com",
+    "isPhishing": false,
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "google.com",
+        "protocol": "https:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 18,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "google.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "1997-09-15T07:00:00+0000",
+            "ageInDays": 10247,
+            "isNew": false
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "Google",
+          "hasForms": true,
+          "formFields": 0,
+          "externalScripts": 0,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "safeBrowsingAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "url": "https://google.com",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "unknown",
+          "source": "Google Safe Browsing",
+          "error": "API authentication failed - check API key",
+          "lastChecked": "2025-10-05T17:52:13.128Z"
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "Google Safe Browsing"
+      }
+    },
+    "recommendations": [
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.6725",
+    "_id": "1759686733255ktp34e5nd",
+    "createdAt": "2025-10-05T17:52:13.255Z"
+  },
+  {
+    "url": "http://suspicious-bank-login.com/verify-account",
+    "isPhishing": true,
+    "riskScore": 80,
+    "riskLevel": "HIGH",
+    "details": {
+      "parsedUrl": {
+        "hostname": "suspicious-bank-login.com",
+        "protocol": "http:",
+        "pathname": "/verify-account"
+      },
+      "urlAnalysis": {
+        "score": 25,
+        "issues": [
+          "Uses HTTP instead of HTTPS",
+          "Suspicious subdomain pattern"
+        ],
+        "details": {
+          "length": 47,
+          "hasHTTPS": false,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "suspicious-bank-login.com",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": false,
+        "score": 20,
+        "issues": [
+          "Domain not found"
+        ],
+        "details": {
+          "error": "getaddrinfo ENOTFOUND suspicious-bank-login.com"
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": false,
+        "score": 20,
+        "issues": [
+          "No SSL certificate (HTTP instead of HTTPS)"
+        ],
+        "details": {
+          "protocol": "HTTP"
+        }
+      },
+      "safeBrowsingAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "url": "http://suspicious-bank-login.com/verify-account",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "unknown",
+          "source": "Google Safe Browsing",
+          "error": "API authentication failed - check API key",
+          "lastChecked": "2025-10-05T17:52:22.789Z"
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "Google Safe Browsing"
+      }
+    },
+    "recommendations": [
+      "🚨 HIGH RISK: Do not enter any personal information",
+      "❌ Do not click on any links in this website",
+      "🔒 Report this site to your security team",
+      "⚠️ URL structure shows suspicious patterns",
+      "🔓 Website does not use SSL encryption",
+      "🔍 Verify this is the official website"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.6725",
+    "_id": "1759686742918rmb4i084e",
+    "createdAt": "2025-10-05T17:52:22.918Z"
+  },
+  {
+    "url": "https://www.linkedin.com/",
+    "isPhishing": false,
+    "riskScore": -5,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "www.linkedin.com",
+        "protocol": "https:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 25,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "www.linkedin.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "LinkedIn: Log In or Sign Up",
+          "hasForms": true,
+          "formFields": 0,
+          "externalScripts": 2,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": false,
+        "score": -5,
+        "issues": [],
+        "details": {
+          "url": "https://www.linkedin.com/",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "high",
+          "source": "VirusTotal",
+          "error": null,
+          "lastChecked": "2025-10-05T18:37:58.616Z",
+          "details": {
+            "scanDate": "2025-10-05T17:40:04.000Z",
+            "positives": 0,
+            "total": 98,
+            "engines": {},
+            "permalink": "https://www.virustotal.com/api/v3/urls/31d9e011b5a0eede6a9922b81096a4b383fc99aa93555d1a9efdf76c42e8b399"
+          },
+          "safe": true
+        },
+        "threatTypes": [],
+        "confidence": "high",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "✅ VirusTotal: Site appears to be safe",
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759689479147n0eh61uic",
+    "createdAt": "2025-10-05T18:37:59.147Z"
+  },
+  {
+    "url": "http://sneaindia.com/",
+    "isPhishing": true,
+    "riskScore": 55,
+    "riskLevel": "MEDIUM",
+    "details": {
+      "parsedUrl": {
+        "hostname": "sneaindia.com",
+        "protocol": "http:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 15,
+        "issues": [
+          "Uses HTTP instead of HTTPS"
+        ],
+        "details": {
+          "length": 21,
+          "hasHTTPS": false,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "sneaindia.com",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "2010-07-14T04:42:18Z",
+            "ageInDays": 5562,
+            "isNew": false
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 10,
+        "issues": [
+          "Contains urgent language"
+        ],
+        "details": {
+          "title": "SNEA India",
+          "hasForms": false,
+          "formFields": 0,
+          "externalScripts": 5,
+          "hasUrgentLanguage": true
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": false,
+        "score": 20,
+        "issues": [
+          "No SSL certificate (HTTP instead of HTTPS)"
+        ],
+        "details": {
+          "protocol": "HTTP"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": false,
+        "score": -5,
+        "issues": [],
+        "details": {
+          "url": "http://sneaindia.com/",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "high",
+          "source": "VirusTotal",
+          "error": null,
+          "lastChecked": "2025-10-05T18:38:37.401Z",
+          "details": {
+            "scanDate": "2024-11-27T05:11:11.000Z",
+            "positives": 0,
+            "total": 96,
+            "engines": {},
+            "permalink": "https://www.virustotal.com/api/v3/urls/02fbe216937f13b348ab33a1eefd93f016ba3505149bd2171c5bf88c9b206199"
+          },
+          "safe": true
+        },
+        "threatTypes": [],
+        "confidence": "high",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "🚨 HIGH RISK: Do not enter any personal information",
+      "❌ Do not click on any links in this website",
+      "🔒 Report this site to your security team",
+      "⚠️ URL structure shows suspicious patterns",
+      "🔓 Website does not use SSL encryption",
+      "🔍 Verify this is the official website",
+      "✅ VirusTotal: Site appears to be safe"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759689518160d337yytwj",
+    "createdAt": "2025-10-05T18:38:38.160Z"
+  },
+  {
+    "url": " http://www.gunnalag.com/",
+    "isPhishing": false,
+    "riskScore": 45,
+    "riskLevel": "MEDIUM",
+    "details": {
+      "parsedUrl": {
+        "hostname": "www.gunnalag.com",
+        "protocol": "http:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 15,
+        "issues": [
+          "Uses HTTP instead of HTTPS"
+        ],
+        "details": {
+          "length": 25,
+          "hasHTTPS": false,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "www.gunnalag.com",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "timeout of 10000ms exceeded"
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": false,
+        "score": 20,
+        "issues": [
+          "No SSL certificate (HTTP instead of HTTPS)"
+        ],
+        "details": {
+          "protocol": "HTTP"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": false,
+        "score": -5,
+        "issues": [],
+        "details": {
+          "url": " http://www.gunnalag.com/",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "high",
+          "source": "VirusTotal",
+          "error": null,
+          "lastChecked": "2025-10-05T18:39:04.591Z",
+          "details": {
+            "scanDate": "2022-09-15T08:43:32.000Z",
+            "positives": 0,
+            "total": 88,
+            "engines": {},
+            "permalink": "https://www.virustotal.com/api/v3/urls/5a1992d4098a769d1fd9489ea2092976d03103a0b59d585f84821c8a8a224811"
+          },
+          "safe": true
+        },
+        "threatTypes": [],
+        "confidence": "high",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "⚠️ URL structure shows suspicious patterns",
+      "🔓 Website does not use SSL encryption",
+      "🔍 Verify this is the official website",
+      "✅ VirusTotal: Site appears to be safe"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "17596895451368g3sgz21q",
+    "createdAt": "2025-10-05T18:39:05.136Z"
+  },
+  {
+    "url": " http://www.gunnalag.com/",
+    "isPhishing": true,
+    "riskScore": 55,
+    "riskLevel": "MEDIUM",
+    "details": {
+      "parsedUrl": {
+        "hostname": "www.gunnalag.com",
+        "protocol": "http:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 15,
+        "issues": [
+          "Uses HTTP instead of HTTPS"
+        ],
+        "details": {
+          "length": 25,
+          "hasHTTPS": false,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "www.gunnalag.com",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 10,
+        "issues": [
+          "Contains urgent language"
+        ],
+        "details": {
+          "title": "GUNNALAG – Gain and Share the Knowledge",
+          "hasForms": true,
+          "formFields": 0,
+          "externalScripts": 5,
+          "hasUrgentLanguage": true
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": false,
+        "score": 20,
+        "issues": [
+          "No SSL certificate (HTTP instead of HTTPS)"
+        ],
+        "details": {
+          "protocol": "HTTP"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": false,
+        "score": -5,
+        "issues": [],
+        "details": {
+          "url": " http://www.gunnalag.com/",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "high",
+          "source": "VirusTotal",
+          "error": null,
+          "lastChecked": "2025-10-05T18:39:16.009Z",
+          "details": {
+            "scanDate": "2022-09-15T08:43:32.000Z",
+            "positives": 0,
+            "total": 88,
+            "engines": {},
+            "permalink": "https://www.virustotal.com/api/v3/urls/5a1992d4098a769d1fd9489ea2092976d03103a0b59d585f84821c8a8a224811"
+          },
+          "safe": true
+        },
+        "threatTypes": [],
+        "confidence": "high",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "🚨 HIGH RISK: Do not enter any personal information",
+      "❌ Do not click on any links in this website",
+      "🔒 Report this site to your security team",
+      "⚠️ URL structure shows suspicious patterns",
+      "🔓 Website does not use SSL encryption",
+      "🔍 Verify this is the official website",
+      "✅ VirusTotal: Site appears to be safe"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "17596895565371bjvsg2ty",
+    "createdAt": "2025-10-05T18:39:16.537Z"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Jmqb7_QuTXA&list=RDMM&index=32",
+    "isPhishing": false,
+    "riskScore": 0,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "www.youtube.com",
+        "protocol": "https:",
+        "pathname": "/watch"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 62,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "www.youtube.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "My Way - Frank Sinatra Lyrics - YouTube",
+          "hasForms": false,
+          "formFields": 1,
+          "externalScripts": 0,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "url": "https://www.youtube.com/watch?v=Jmqb7_QuTXA&list=RDMM&index=32",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "unknown",
+          "source": "VirusTotal",
+          "error": "API error: URL not found in VirusTotal database",
+          "lastChecked": "2025-10-05T18:41:04.010Z",
+          "details": {
+            "scanDate": null,
+            "positives": 0,
+            "total": 0,
+            "engines": {},
+            "permalink": null
+          }
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759689664549bq09c8ahb",
+    "createdAt": "2025-10-05T18:41:04.549Z"
+  },
+  {
+    "url": "https://www.linkedin.com",
+    "isPhishing": false,
+    "riskScore": -5,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "www.linkedin.com",
+        "protocol": "https:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 24,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "www.linkedin.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "LinkedIn: Log In or Sign Up",
+          "hasForms": true,
+          "formFields": 0,
+          "externalScripts": 2,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": false,
+        "score": -5,
+        "issues": [],
+        "details": {
+          "url": "https://www.linkedin.com",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "high",
+          "source": "VirusTotal",
+          "error": null,
+          "lastChecked": "2025-10-05T18:46:06.942Z",
+          "details": {
+            "scanDate": "2025-10-05T18:40:07.000Z",
+            "positives": 0,
+            "total": 98,
+            "engines": {},
+            "permalink": "https://www.virustotal.com/api/v3/urls/31d9e011b5a0eede6a9922b81096a4b383fc99aa93555d1a9efdf76c42e8b399"
+          },
+          "safe": true
+        },
+        "threatTypes": [],
+        "confidence": "high",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "✅ VirusTotal: Site appears to be safe",
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759689967490pplecp4y4",
+    "createdAt": "2025-10-05T18:46:07.490Z"
+  },
+  {
+    "url": "https://www.linkedin.com",
+    "isPhishing": false,
+    "riskScore": -5,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "www.linkedin.com",
+        "protocol": "https:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 24,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "www.linkedin.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "LinkedIn: Log In or Sign Up",
+          "hasForms": true,
+          "formFields": 0,
+          "externalScripts": 2,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": false,
+        "score": -5,
+        "issues": [],
+        "details": {
+          "url": "https://www.linkedin.com",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "high",
+          "source": "VirusTotal",
+          "error": null,
+          "lastChecked": "2025-10-05T18:48:15.583Z",
+          "details": {
+            "scanDate": "2025-10-05T18:40:07.000Z",
+            "positives": 0,
+            "total": 98,
+            "engines": {},
+            "permalink": "https://www.virustotal.com/api/v3/urls/31d9e011b5a0eede6a9922b81096a4b383fc99aa93555d1a9efdf76c42e8b399"
+          },
+          "safe": true
+        },
+        "threatTypes": [],
+        "confidence": "high",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "✅ VirusTotal: Site appears to be safe",
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759690096120n7q495f4p",
+    "createdAt": "2025-10-05T18:48:16.120Z"
+  },
+  {
+    "url": "https://google.com",
+    "isPhishing": false,
+    "riskScore": -5,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "google.com",
+        "protocol": "https:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 18,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "google.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "1997-09-15T07:00:00+0000",
+            "ageInDays": 10247,
+            "isNew": false
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "Google",
+          "hasForms": true,
+          "formFields": 0,
+          "externalScripts": 0,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": false,
+        "score": -5,
+        "issues": [],
+        "details": {
+          "url": "https://google.com",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "high",
+          "source": "VirusTotal",
+          "error": null,
+          "lastChecked": "2025-10-05T19:03:27.325Z",
+          "details": {
+            "scanDate": "2025-10-05T17:58:11.000Z",
+            "positives": 0,
+            "total": 98,
+            "engines": {},
+            "permalink": "https://www.virustotal.com/api/v3/urls/9d116b1b0c1200ca75016e4c010bc94836366881b021a658ea7f8548b6543c1e"
+          },
+          "safe": true
+        },
+        "threatTypes": [],
+        "confidence": "high",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.6725",
+    "_id": "1759691008017efaqv7wtz",
+    "createdAt": "2025-10-05T19:03:28.017Z"
+  },
+  {
+    "url": "https://google.com",
+    "isPhishing": false,
+    "riskScore": -5,
+    "riskLevel": "LOW",
+    "details": {
+      "parsedUrl": {
+        "hostname": "google.com",
+        "protocol": "https:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "length": 18,
+          "hasHTTPS": true,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 0,
+        "issues": [],
+        "details": {
+          "reputation": {
+            "domain": "google.com",
+            "isTrusted": true,
+            "reputationScore": 80,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": true,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "1997-09-15T07:00:00+0000",
+            "ageInDays": 10247,
+            "isNew": false
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "title": "Google",
+          "hasForms": true,
+          "formFields": 0,
+          "externalScripts": 0,
+          "hasUrgentLanguage": false
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": true,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "protocol": "HTTPS"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": false,
+        "score": -5,
+        "issues": [],
+        "details": {
+          "url": "https://google.com",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "high",
+          "source": "VirusTotal",
+          "error": null,
+          "lastChecked": "2025-10-05T19:03:45.046Z",
+          "details": {
+            "scanDate": "2025-10-05T17:58:11.000Z",
+            "positives": 0,
+            "total": 98,
+            "engines": {},
+            "permalink": "https://www.virustotal.com/api/v3/urls/9d116b1b0c1200ca75016e4c010bc94836366881b021a658ea7f8548b6543c1e"
+          },
+          "safe": true
+        },
+        "threatTypes": [],
+        "confidence": "high",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "✅ Website appears to be legitimate"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.6725",
+    "_id": "1759691025612hwlq68vfb",
+    "createdAt": "2025-10-05T19:03:45.612Z"
+  },
+  {
+    "url": "http://manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id",
+    "isPhishing": true,
+    "riskScore": 140,
+    "riskLevel": "HIGH",
+    "details": {
+      "parsedUrl": {
+        "hostname": "manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id",
+        "protocol": "http:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 15,
+        "issues": [
+          "Uses HTTP instead of HTTPS"
+        ],
+        "details": {
+          "length": 63,
+          "hasHTTPS": false,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "error": "connect ETIMEDOUT 45.126.58.147:43",
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "read ECONNRESET"
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": false,
+        "score": 20,
+        "issues": [
+          "No SSL certificate (HTTP instead of HTTPS)"
+        ],
+        "details": {
+          "protocol": "HTTP"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": true,
+        "score": 90,
+        "issues": [
+          "VirusTotal: Malware - Software designed to harm or exploit systems",
+          "VirusTotal: Social Engineering - Phishing and deceptive content",
+          "VirusTotal: Suspicious - Potentially harmful content",
+          "Detected by 6/98 engines"
+        ],
+        "details": {
+          "url": "http://manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id",
+          "isThreat": true,
+          "threatTypes": [
+            "MALWARE",
+            "SOCIAL_ENGINEERING",
+            "SUSPICIOUS"
+          ],
+          "platformTypes": [
+            "ANY_PLATFORM"
+          ],
+          "threatEntries": [
+            "http://manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id"
+          ],
+          "threatEntryTypes": [
+            "URL"
+          ],
+          "confidence": "low",
+          "source": "VirusTotal",
+          "error": null,
+          "lastChecked": "2025-10-05T19:12:43.141Z",
+          "details": {
+            "scanDate": "2025-09-19T18:38:19.000Z",
+            "positives": 6,
+            "total": 98,
+            "engines": {
+              "ESET": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "G-Data": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Kaspersky": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "SOCRadar": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Sophos": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Trustwave": {
+                "category": "suspicious",
+                "result": "suspicious"
+              },
+              "Webroot": {
+                "category": "malicious",
+                "result": "malicious"
+              }
+            },
+            "permalink": "https://www.virustotal.com/api/v3/urls/42a928902ee5de828d6ba9ee2574897b228cf7c1300a29e5aa3ff55a7f1d166d"
+          }
+        },
+        "threatTypes": [
+          "MALWARE",
+          "SOCIAL_ENGINEERING",
+          "SUSPICIOUS"
+        ],
+        "confidence": "low",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "🚨 HIGH RISK: Do not enter any personal information",
+      "❌ Do not click on any links in this website",
+      "🔒 Report this site to your security team",
+      "⚠️ URL structure shows suspicious patterns",
+      "🔓 Website does not use SSL encryption",
+      "🔍 Verify this is the official website",
+      "🚨 THREAT INTELLIGENCE WARNING: This site is flagged as malicious",
+      "⚠️ Multiple security threats detected",
+      "🛡️ Avoid this website completely"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "17596915637714657nehzx",
+    "createdAt": "2025-10-05T19:12:43.771Z"
+  },
+  {
+    "url": "http://manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id",
+    "isPhishing": true,
+    "riskScore": 140,
+    "riskLevel": "HIGH",
+    "details": {
+      "parsedUrl": {
+        "hostname": "manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id",
+        "protocol": "http:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 15,
+        "issues": [
+          "Uses HTTP instead of HTTPS"
+        ],
+        "details": {
+          "length": 63,
+          "hasHTTPS": false,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "error": "connect ETIMEDOUT 45.126.58.147:43",
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "read ECONNRESET"
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": false,
+        "score": 20,
+        "issues": [
+          "No SSL certificate (HTTP instead of HTTPS)"
+        ],
+        "details": {
+          "protocol": "HTTP"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": true,
+        "score": 90,
+        "issues": [
+          "VirusTotal: Malware - Software designed to harm or exploit systems",
+          "VirusTotal: Social Engineering - Phishing and deceptive content",
+          "VirusTotal: Suspicious - Potentially harmful content",
+          "Detected by 6/98 engines"
+        ],
+        "details": {
+          "url": "http://manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id",
+          "isThreat": true,
+          "threatTypes": [
+            "MALWARE",
+            "SOCIAL_ENGINEERING",
+            "SUSPICIOUS"
+          ],
+          "platformTypes": [
+            "ANY_PLATFORM"
+          ],
+          "threatEntries": [
+            "http://manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id"
+          ],
+          "threatEntryTypes": [
+            "URL"
+          ],
+          "confidence": "low",
+          "source": "VirusTotal",
+          "error": null,
+          "lastChecked": "2025-10-05T19:16:19.887Z",
+          "details": {
+            "scanDate": "2025-09-19T18:38:19.000Z",
+            "positives": 6,
+            "total": 98,
+            "engines": {
+              "ESET": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "G-Data": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Kaspersky": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "SOCRadar": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Sophos": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Trustwave": {
+                "category": "suspicious",
+                "result": "suspicious"
+              },
+              "Webroot": {
+                "category": "malicious",
+                "result": "malicious"
+              }
+            },
+            "permalink": "https://www.virustotal.com/api/v3/urls/42a928902ee5de828d6ba9ee2574897b228cf7c1300a29e5aa3ff55a7f1d166d"
+          }
+        },
+        "threatTypes": [
+          "MALWARE",
+          "SOCIAL_ENGINEERING",
+          "SUSPICIOUS"
+        ],
+        "confidence": "low",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "🚨 HIGH RISK: Do not enter any personal information",
+      "❌ Do not click on any links in this website",
+      "🔒 Report this site to your security team",
+      "⚠️ URL structure shows suspicious patterns",
+      "🔓 Website does not use SSL encryption",
+      "🔍 Verify this is the official website",
+      "🚨 THREAT INTELLIGENCE WARNING: This site is flagged as malicious",
+      "⚠️ Multiple security threats detected",
+      "🛡️ Avoid this website completely"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759691780454iuwrhzx0q",
+    "createdAt": "2025-10-05T19:16:20.454Z"
+  },
+  {
+    "url": "http://hookuptacticsguide.com",
+    "isPhishing": true,
+    "riskScore": 140,
+    "riskLevel": "HIGH",
+    "details": {
+      "parsedUrl": {
+        "hostname": "hookuptacticsguide.com",
+        "protocol": "http:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 15,
+        "issues": [
+          "Uses HTTP instead of HTTPS"
+        ],
+        "details": {
+          "length": 29,
+          "hasHTTPS": false,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "hookuptacticsguide.com",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "2020-11-28T19:53:41Z",
+            "ageInDays": 1771,
+            "isNew": false
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "read ECONNRESET"
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": false,
+        "score": 20,
+        "issues": [
+          "No SSL certificate (HTTP instead of HTTPS)"
+        ],
+        "details": {
+          "protocol": "HTTP"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": true,
+        "score": 90,
+        "issues": [
+          "VirusTotal: Malware - Software designed to harm or exploit systems",
+          "VirusTotal: Social Engineering - Phishing and deceptive content",
+          "Detected by 7/98 engines"
+        ],
+        "details": {
+          "url": "http://hookuptacticsguide.com",
+          "isThreat": true,
+          "threatTypes": [
+            "MALWARE",
+            "SOCIAL_ENGINEERING"
+          ],
+          "platformTypes": [
+            "ANY_PLATFORM"
+          ],
+          "threatEntries": [
+            "http://hookuptacticsguide.com"
+          ],
+          "threatEntryTypes": [
+            "URL"
+          ],
+          "confidence": "low",
+          "source": "VirusTotal",
+          "error": null,
+          "lastChecked": "2025-10-05T19:16:44.817Z",
+          "details": {
+            "scanDate": "2025-09-19T16:35:36.000Z",
+            "positives": 7,
+            "total": 98,
+            "engines": {
+              "ESET": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "G-Data": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Kaspersky": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Seclookup": {
+                "category": "malicious",
+                "result": "malicious"
+              },
+              "SOCRadar": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Sophos": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Webroot": {
+                "category": "malicious",
+                "result": "malicious"
+              }
+            },
+            "permalink": "https://www.virustotal.com/api/v3/urls/f0c279e14fe9628c16f16cc4c4e1f1e01eab213fe874ac82fd2c33205c47e002"
+          }
+        },
+        "threatTypes": [
+          "MALWARE",
+          "SOCIAL_ENGINEERING"
+        ],
+        "confidence": "low",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "🚨 HIGH RISK: Do not enter any personal information",
+      "❌ Do not click on any links in this website",
+      "🔒 Report this site to your security team",
+      "⚠️ URL structure shows suspicious patterns",
+      "🔓 Website does not use SSL encryption",
+      "🔍 Verify this is the official website",
+      "🚨 THREAT INTELLIGENCE WARNING: This site is flagged as malicious",
+      "⚠️ Multiple security threats detected",
+      "🛡️ Avoid this website completely"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759691806396yskwf19iz",
+    "createdAt": "2025-10-05T19:16:46.396Z"
+  },
+  {
+    "url": "http://hookuptacticsguide.com",
+    "isPhishing": true,
+    "riskScore": 140,
+    "riskLevel": "HIGH",
+    "details": {
+      "parsedUrl": {
+        "hostname": "hookuptacticsguide.com",
+        "protocol": "http:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 15,
+        "issues": [
+          "Uses HTTP instead of HTTPS"
+        ],
+        "details": {
+          "length": 29,
+          "hasHTTPS": false,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "hookuptacticsguide.com",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "2020-11-28T19:53:41Z",
+            "ageInDays": 1771,
+            "isNew": false
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "read ECONNRESET"
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": false,
+        "score": 20,
+        "issues": [
+          "No SSL certificate (HTTP instead of HTTPS)"
+        ],
+        "details": {
+          "protocol": "HTTP"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": true,
+        "score": 90,
+        "issues": [
+          "VirusTotal: Malware - Software designed to harm or exploit systems",
+          "VirusTotal: Social Engineering - Phishing and deceptive content",
+          "Detected by 7/98 engines"
+        ],
+        "details": {
+          "url": "http://hookuptacticsguide.com",
+          "isThreat": true,
+          "threatTypes": [
+            "MALWARE",
+            "SOCIAL_ENGINEERING"
+          ],
+          "platformTypes": [
+            "ANY_PLATFORM"
+          ],
+          "threatEntries": [
+            "http://hookuptacticsguide.com"
+          ],
+          "threatEntryTypes": [
+            "URL"
+          ],
+          "confidence": "low",
+          "source": "VirusTotal",
+          "error": null,
+          "lastChecked": "2025-10-05T19:16:54.524Z",
+          "details": {
+            "scanDate": "2025-09-19T16:35:36.000Z",
+            "positives": 7,
+            "total": 98,
+            "engines": {
+              "ESET": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "G-Data": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Kaspersky": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Seclookup": {
+                "category": "malicious",
+                "result": "malicious"
+              },
+              "SOCRadar": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Sophos": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Webroot": {
+                "category": "malicious",
+                "result": "malicious"
+              }
+            },
+            "permalink": "https://www.virustotal.com/api/v3/urls/f0c279e14fe9628c16f16cc4c4e1f1e01eab213fe874ac82fd2c33205c47e002"
+          }
+        },
+        "threatTypes": [
+          "MALWARE",
+          "SOCIAL_ENGINEERING"
+        ],
+        "confidence": "low",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "🚨 HIGH RISK: Do not enter any personal information",
+      "❌ Do not click on any links in this website",
+      "🔒 Report this site to your security team",
+      "⚠️ URL structure shows suspicious patterns",
+      "🔓 Website does not use SSL encryption",
+      "🔍 Verify this is the official website",
+      "🚨 THREAT INTELLIGENCE WARNING: This site is flagged as malicious",
+      "⚠️ Multiple security threats detected",
+      "🛡️ Avoid this website completely"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "17596918158845eqo4jj8i",
+    "createdAt": "2025-10-05T19:16:55.884Z"
+  },
+  {
+    "url": "http://manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id",
+    "isPhishing": true,
+    "riskScore": 140,
+    "riskLevel": "HIGH",
+    "details": {
+      "parsedUrl": {
+        "hostname": "manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id",
+        "protocol": "http:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 15,
+        "issues": [
+          "Uses HTTP instead of HTTPS"
+        ],
+        "details": {
+          "length": 63,
+          "hasHTTPS": false,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 15,
+        "issues": [
+          "Domain not in trusted list"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "error": "connect ETIMEDOUT 45.126.58.147:43",
+            "isNew": false,
+            "ageInDays": null
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "read ECONNRESET"
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": false,
+        "score": 20,
+        "issues": [
+          "No SSL certificate (HTTP instead of HTTPS)"
+        ],
+        "details": {
+          "protocol": "HTTP"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": true,
+        "score": 90,
+        "issues": [
+          "VirusTotal: Malware - Software designed to harm or exploit systems",
+          "VirusTotal: Social Engineering - Phishing and deceptive content",
+          "VirusTotal: Suspicious - Potentially harmful content",
+          "Detected by 6/98 engines"
+        ],
+        "details": {
+          "url": "http://manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id",
+          "isThreat": true,
+          "threatTypes": [
+            "MALWARE",
+            "SOCIAL_ENGINEERING",
+            "SUSPICIOUS"
+          ],
+          "platformTypes": [
+            "ANY_PLATFORM"
+          ],
+          "threatEntries": [
+            "http://manageaccntswebappsecurekltyifmhnhikledr.shukaku2.biz.id"
+          ],
+          "threatEntryTypes": [
+            "URL"
+          ],
+          "confidence": "low",
+          "source": "VirusTotal",
+          "error": null,
+          "lastChecked": "2025-10-05T19:16:56.939Z",
+          "details": {
+            "scanDate": "2025-09-19T18:38:19.000Z",
+            "positives": 6,
+            "total": 98,
+            "engines": {
+              "ESET": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "G-Data": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Kaspersky": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "SOCRadar": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Sophos": {
+                "category": "malicious",
+                "result": "phishing"
+              },
+              "Trustwave": {
+                "category": "suspicious",
+                "result": "suspicious"
+              },
+              "Webroot": {
+                "category": "malicious",
+                "result": "malicious"
+              }
+            },
+            "permalink": "https://www.virustotal.com/api/v3/urls/42a928902ee5de828d6ba9ee2574897b228cf7c1300a29e5aa3ff55a7f1d166d"
+          }
+        },
+        "threatTypes": [
+          "MALWARE",
+          "SOCIAL_ENGINEERING",
+          "SUSPICIOUS"
+        ],
+        "confidence": "low",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "🚨 HIGH RISK: Do not enter any personal information",
+      "❌ Do not click on any links in this website",
+      "🔒 Report this site to your security team",
+      "⚠️ URL structure shows suspicious patterns",
+      "🔓 Website does not use SSL encryption",
+      "🔍 Verify this is the official website",
+      "🚨 THREAT INTELLIGENCE WARNING: This site is flagged as malicious",
+      "⚠️ Multiple security threats detected",
+      "🛡️ Avoid this website completely"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759691817379y3jwz68xt",
+    "createdAt": "2025-10-05T19:16:57.379Z"
+  },
+  {
+    "url": "http://badaniainformacyjneinfo.biz",
+    "isPhishing": true,
+    "riskScore": 60,
+    "riskLevel": "MEDIUM",
+    "details": {
+      "parsedUrl": {
+        "hostname": "badaniainformacyjneinfo.biz",
+        "protocol": "http:",
+        "pathname": "/"
+      },
+      "urlAnalysis": {
+        "score": 15,
+        "issues": [
+          "Uses HTTP instead of HTTPS"
+        ],
+        "details": {
+          "length": 34,
+          "hasHTTPS": false,
+          "hasIP": false
+        }
+      },
+      "domainAnalysis": {
+        "score": 25,
+        "issues": [
+          "Domain not in trusted list",
+          "Domain is very new (less than 30 days)"
+        ],
+        "details": {
+          "reputation": {
+            "domain": "badaniainformacyjneinfo.biz",
+            "isTrusted": false,
+            "reputationScore": 30,
+            "confidence": "low",
+            "sources": [
+              "Fallback List"
+            ],
+            "issues": [
+              "Domain not in trusted list"
+            ],
+            "details": {
+              "fallback": true,
+              "method": "static_list"
+            },
+            "fallback": true
+          },
+          "isTrusted": false,
+          "confidence": "low",
+          "sources": [
+            "Fallback List"
+          ],
+          "whois": {
+            "creationDate": "2025-09-06T08:02:09.77Z",
+            "ageInDays": 29,
+            "isNew": true
+          }
+        }
+      },
+      "contentAnalysis": {
+        "accessible": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "error": "Request failed with status code 403"
+        }
+      },
+      "sslAnalysis": {
+        "hasSSL": false,
+        "score": 20,
+        "issues": [
+          "No SSL certificate (HTTP instead of HTTPS)"
+        ],
+        "details": {
+          "protocol": "HTTP"
+        }
+      },
+      "virusTotalAnalysis": {
+        "isThreat": false,
+        "score": 0,
+        "issues": [],
+        "details": {
+          "url": "http://badaniainformacyjneinfo.biz",
+          "isThreat": false,
+          "threatTypes": [],
+          "platformTypes": [],
+          "threatEntries": [],
+          "threatEntryTypes": [],
+          "confidence": "unknown",
+          "source": "VirusTotal",
+          "error": "Rate limit exceeded. Please try again later.",
+          "lastChecked": "2025-10-05T19:17:09.175Z",
+          "details": {
+            "scanDate": null,
+            "positives": 0,
+            "total": 0,
+            "engines": {},
+            "permalink": null
+          }
+        },
+        "threatTypes": [],
+        "confidence": "unknown",
+        "source": "VirusTotal"
+      }
+    },
+    "recommendations": [
+      "🚨 HIGH RISK: Do not enter any personal information",
+      "❌ Do not click on any links in this website",
+      "🔒 Report this site to your security team",
+      "⚠️ URL structure shows suspicious patterns",
+      "🔓 Website does not use SSL encryption",
+      "🔍 Verify this is the official website"
+    ],
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+    "_id": "1759691829179yn2j3ry2o",
+    "createdAt": "2025-10-05T19:17:09.179Z"
+  }
+]
