@@ -25,7 +25,7 @@ const App: React.FC = () => {
 
 
   return (
-        <div className="min-h-dvh bg-background">
+        <div className="min-h-screen bg-background">
           <Header />
           <main className="container mx-auto px-4 py-6 md:py-8">
             <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-pretty mb-4">
