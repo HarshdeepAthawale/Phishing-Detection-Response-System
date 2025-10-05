@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import AnalysisResults from './components/AnalysisResults';
-import { Analytics } from '@vercel/analytics/react';
 import { analyzeUrl } from './services/phishingService';
 import { AnalysisResult } from './types/types';
 
@@ -81,7 +80,6 @@ const App: React.FC = () => {
               </div>
             )}
           </main>
-          <Analytics />
         </div>
   );
 };

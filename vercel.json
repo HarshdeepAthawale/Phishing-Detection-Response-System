@@ -6,7 +6,7 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "build",
-        "installCommand": "npm install --legacy-peer-deps",
+        "installCommand": "npm ci --legacy-peer-deps",
         "buildCommand": "npm run build"
       }
     }
@@ -19,6 +19,9 @@
   ],
   "env": {
     "CI": "false",
+    "NODE_ENV": "production",
+    "GENERATE_SOURCEMAP": "false",
     "REACT_APP_API_URL": "https://your-backend-url.vercel.app/api"
-  }
+  },
+  "buildCommand": "cd frontend && npm ci --legacy-peer-deps && npm run build"
 }
