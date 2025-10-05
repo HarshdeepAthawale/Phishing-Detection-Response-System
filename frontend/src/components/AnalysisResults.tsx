@@ -176,13 +176,6 @@ const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, url }) => {
 
       </div>
 
-      {/* Analysis Metadata */}
-      <Card className="p-4">
-        <div className="flex justify-between items-center text-sm text-muted-foreground">
-          <span>Analysis Source: {analysis.source}</span>
-          <span>Analyzed: {new Date(analysis.timestamp).toLocaleString()}</span>
-        </div>
-      </Card>
     </div>
   );
 };
