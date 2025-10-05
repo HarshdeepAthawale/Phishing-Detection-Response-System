@@ -216,7 +216,7 @@ app.post('/api/virus-total', async (req, res) => {
     console.error('VirusTotal error:', error);
     res.status(500).json({
       success: false,
-      message: 'Failed to check URL with VirusTotal'
+      message: 'Failed to perform security analysis'
     });
   }
 });

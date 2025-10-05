@@ -148,7 +148,7 @@ const performClientSideAnalysis = async (url: string): Promise<AnalysisResult> =
           isMalicious: false,
           detectionCount: 0,
           lastAnalysis: new Date().toISOString(),
-          issues: ['Invalid URL - cannot check with VirusTotal']
+          issues: ['Invalid URL - cannot perform security analysis']
         }
       },
       timestamp: new Date().toISOString(),

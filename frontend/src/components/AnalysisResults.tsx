@@ -176,7 +176,7 @@ const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, url }) => {
 
         {/* VirusTotal */}
         <Card className="p-6">
-          <h3 className="font-semibold mb-4">VirusTotal Analysis</h3>
+          <h3 className="font-semibold mb-4">Security Analysis</h3>
           <div className="space-y-2">
             <div className="flex justify-between">
               <span className="text-sm text-muted-foreground">Malicious:</span>
