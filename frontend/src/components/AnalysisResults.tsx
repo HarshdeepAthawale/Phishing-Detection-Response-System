@@ -174,38 +174,6 @@ const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, url }) => {
           </div>
         </Card>
 
-        {/* VirusTotal */}
-        <Card className="p-6">
-          <h3 className="font-semibold mb-4">Security Analysis</h3>
-          <div className="space-y-2">
-            <div className="flex justify-between">
-              <span className="text-sm text-muted-foreground">Malicious:</span>
-              <Badge variant={analysis.analysis.virusTotal.isMalicious ? 'danger' : 'success'}>
-                {analysis.analysis.virusTotal.isMalicious ? 'Yes' : 'No'}
-              </Badge>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-sm text-muted-foreground">Detection Count:</span>
-              <span className="text-sm">{analysis.analysis.virusTotal.detectionCount}/98</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-sm text-muted-foreground">Last Analysis:</span>
-              <span className="text-sm">
-                {new Date(analysis.analysis.virusTotal.lastAnalysis).toLocaleDateString()}
-              </span>
-            </div>
-            {analysis.analysis.virusTotal.issues.length > 0 && (
-              <div className="mt-3">
-                <h4 className="text-sm font-medium mb-1">Issues:</h4>
-                <ul className="list-disc list-inside space-y-1">
-                  {analysis.analysis.virusTotal.issues.map((issue, index) => (
-                    <li key={index} className="text-xs text-muted-foreground">{issue}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        </Card>
       </div>
 
       {/* Analysis Metadata */}
