@@ -2,11 +2,58 @@
 
 A comprehensive, production-ready web application that helps users detect and analyze potentially malicious websites to protect against phishing attacks.
 
+## 🏗️ Project Structure
+
+```
+phishing-detection-system/
+├── 📁 backend/                    # Node.js Backend API
+│   ├── 📁 api/                   # API route handlers
+│   ├── 📁 config/                # Configuration files
+│   ├── 📁 services/              # Business logic services
+│   ├── 📁 middleware/            # Express middleware
+│   ├── 📁 utils/                 # Utility functions
+│   ├── 📁 tests/                 # Backend tests
+│   ├── 📁 data/                  # Local data storage
+│   ├── 📄 server.js              # Main server entry point
+│   └── 📄 package.json           # Backend dependencies
+│
+├── 📁 frontend/                   # React Frontend Application
+│   ├── 📁 src/
+│   │   ├── 📁 components/        # React components
+│   │   ├── 📁 pages/            # Page components
+│   │   ├── 📁 hooks/            # Custom React hooks
+│   │   ├── 📁 context/          # React context providers
+│   │   ├── 📁 services/         # API services
+│   │   ├── 📁 utils/            # Utility functions
+│   │   ├── 📁 types/            # TypeScript definitions
+│   │   └── 📁 assets/           # Static assets
+│   ├── 📁 public/               # Public static files
+│   ├── 📁 build/                # Production build output
+│   └── 📄 package.json          # Frontend dependencies
+│
+├── 📁 docs/                      # Documentation
+│   ├── 📄 PROJECT_STRUCTURE.md  # Detailed project structure
+│   └── 📄 ARCHITECTURE.md       # Architecture overview
+│
+├── 📁 config/                    # Configuration files
+│   └── 📄 .env                  # Environment variables
+│
+├── 📁 deployment/                # Deployment configurations
+│   ├── 📄 render.yaml           # Render deployment config
+│   └── 📄 vercel.json           # Vercel deployment config
+│
+├── 📁 tests/                     # Integration tests
+│   └── 📄 test-virustotal.js    # VirusTotal API tests
+│
+├── 📁 scripts/                   # Utility scripts
+└── 📄 package.json              # Root package.json (workspace)
+```
+
 ## ✨ Features
 
 - **🔍 Real-time URL Analysis**: Instant security analysis with comprehensive risk assessment
 - **📊 Risk Scoring**: Advanced scoring system with detailed breakdowns
-- **🛡️ Multi-layer Detection**: URL structure, domain analysis, content scanning, and SSL validation
+- **🛡️ Multi-layer Detection**: URL structure, domain analysis, content scanning, SSL validation, and VirusTotal threat intelligence
 - **💡 Smart Recommendations**: Actionable security advice based on analysis results
 - **🎨 Modern UI**: Beautiful, responsive interface with real-time validation
 - **🔄 Fallback System**: Client-side analysis when backend is unavailable
@@ -32,46 +79,64 @@ A comprehensive, production-ready web application that helps users detect and an
 
 ## 🚀 Quick Start
 
-### Option 1: Use the Live Application
-The application is already deployed and ready to use:
-- **Frontend**: [Visit the live app](https://phishing-detection-response-system.vercel.app)
-- **Backend API**: [API Health Check](https://phishing-detection-api.onrender.com/api/health)
+### Prerequisites
+- Node.js >= 18.0.0
+- npm >= 8.0.0
 
-### Option 2: Local Development
+### Installation
 
-1. **Clone and install**
+1. **Clone the repository**
    ```bash
    git clone <repository-url>
    cd phishing-detection-system
+   ```
+
+2. **Install all dependencies**
+   ```bash
    npm run install-all
    ```
 
-2. **Start development**
+3. **Configure environment variables**
+   ```bash
+   cp config/.env.example config/.env
+   # Edit config/.env with your API keys
+   ```
+
+4. **Start development servers**
    ```bash
    npm run dev
    ```
 
-3. **Access locally**
+5. **Access the application**
    - Frontend: http://localhost:3000
-   - Backend: http://localhost:5000
+   - Backend API: http://localhost:10000
 
-## 📁 Project Structure
+## 📋 Available Scripts
 
+### Root Level Scripts
+```bash
+npm run dev              # Start both frontend and backend
+npm start                # Start backend server only
+npm run build            # Build frontend for production
+npm run install-all      # Install all dependencies
+npm test                 # Run all tests
+npm run clean            # Clean all node_modules
 ```
-├── client/                    # React frontend
-│   ├── src/
-│   │   ├── components/        # UI components
-│   │   ├── services/          # API services with fallback
-│   │   └── types.ts           # TypeScript definitions
-│   ├── vercel.json           # Vercel deployment config
-│   └── .nvmrc               # Node version specification
-├── src/                      # Backend source
-│   ├── config/              # Storage and configuration
-│   ├── models/              # Data models
-│   └── phishingDetector.js  # Core detection engine
-├── vercel.json              # Root deployment config
-├── render.yaml              # Backend deployment config
-└── DEPLOYMENT_GUIDE.md      # Complete deployment instructions
+
+### Backend Scripts
+```bash
+npm run backend:dev      # Start backend with nodemon
+npm run backend:start    # Start backend server
+npm run backend:test     # Run backend tests
+npm run backend:install  # Install backend dependencies
+```
+
+### Frontend Scripts
+```bash
+npm run frontend:dev     # Start frontend development server
+npm run frontend:build   # Build frontend for production
+npm run frontend:test    # Run frontend tests
+npm run frontend:install # Install frontend dependencies
 ```
 
 ## 🔧 API Endpoints
@@ -128,54 +193,6 @@ GET /api/analytics
 - **🟠 MEDIUM**: Suspicious characteristics (40-69 points)
 - **🔴 HIGH**: Likely phishing (70+ points)
 
-## 🛠️ Development
-
-### Available Scripts
-- `npm start` - Start backend server
-- `npm run dev` - Start both frontend and backend
-- `npm run client` - Start only frontend
-- `npm run build` - Build frontend for production
-- `npm run install-all` - Install all dependencies
-
-### Environment Configuration
-The system automatically handles environment configuration for both development and production.
-
-## 🚀 Deployment
-
-### ✅ Already Deployed
-The application is fully deployed and functional:
-- **Frontend**: Vercel (with optimized builds)
-- **Backend**: Render (with auto-scaling)
-
-### 📋 Deployment Guide
-For detailed deployment instructions, see [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)
-
-## 🔄 Smart Fallback System
-
-The application includes intelligent fallback mechanisms:
-
-1. **Primary**: Full backend analysis with comprehensive checks
-2. **Fallback**: Client-side basic analysis when backend is unavailable
-3. **Graceful Degradation**: Users always get security analysis
-
-## 🧪 Testing
-
-### Live Testing
-- Visit the deployed application
-- Test with various URLs (legitimate and suspicious)
-- Verify both backend and fallback analysis work
-
-### Local Testing
-```bash
-# Test backend health
-curl http://localhost:5000/api/health
-
-# Test URL analysis
-curl -X POST http://localhost:5000/api/detect \
-  -H "Content-Type: application/json" \
-  -d '{"url": "https://google.com"}'
-```
-
 ## 🛡️ Security Features
 
 - **Rate Limiting**: Prevents abuse with intelligent throttling
@@ -183,6 +200,42 @@ curl -X POST http://localhost:5000/api/detect \
 - **Input Validation**: Comprehensive URL and data validation
 - **Security Headers**: Helmet.js for enhanced security
 - **Error Handling**: Graceful error management without information leakage
+
+## 🚀 Deployment
+
+### Production Deployment
+The application is configured for deployment on:
+- **Frontend**: Vercel
+- **Backend**: Render
+
+### Environment Variables
+```bash
+# VirusTotal Configuration
+VIRUSTOTAL_ENABLED=true
+VIRUSTOTAL_API_KEY=your_api_key_here
+
+# Application Configuration
+NODE_ENV=production
+PORT=10000
+FRONTEND_URL=https://your-frontend-domain.com
+```
+
+## 🧪 Testing
+
+### Run Tests
+```bash
+# Run all tests
+npm test
+
+# Run backend tests
+npm run backend:test
+
+# Run frontend tests
+npm run frontend:test
+
+# Test VirusTotal integration
+node tests/test-virustotal.js
+```
 
 ## 📊 Production Features
 

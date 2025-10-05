@@ -1,0 +1,70 @@
+{
+  "name": "phishing-detection-frontend",
+  "version": "0.1.0",
+  "description": "Frontend React application for phishing detection system",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "@types/node": "^16.18.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vercel/analytics": "^1.3.1",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.6.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "lucide-react": "^0.454.0",
+    "postcss": "^8.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "recharts": "^2.15.4",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^4.9.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.0"
+  },
+  "homepage": ".",
+  "keywords": [
+    "phishing",
+    "detection",
+    "security",
+    "react",
+    "typescript",
+    "tailwindcss"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
