@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import AnalysisResults from './components/AnalysisResults';
 import { analyzeUrl } from './services/phishingService';
@@ -80,6 +81,7 @@ const App: React.FC = () => {
               </div>
             )}
           </main>
+          <Analytics />
         </div>
   );
 };
